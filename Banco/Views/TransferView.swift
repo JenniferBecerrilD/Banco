@@ -38,7 +38,7 @@ struct Transfer : View {
     var body : some View{
         
         ZStack {
-            Color(.gray).opacity(0.06).ignoresSafeArea(.all)
+            Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
             
             
             
@@ -46,9 +46,7 @@ struct Transfer : View {
             VStack{
                 
        
-                
-                /*Text("Transferir").fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 9)*/
-             
+              
                         
                         
                         VStack (alignment: .leading){
@@ -56,7 +54,7 @@ struct Transfer : View {
                                 Text("Cuenta de destino")
                                     .font(.headline)
                                     .foregroundColor(Color.black)
-                                //.frame(alignment: .leading)
+                                
                                 
                                 DisclosureGroup("\(selectedNum)", isExpanded: $isExpanded) {
                                     ScrollView{
@@ -75,17 +73,7 @@ struct Transfer : View {
                                 }.accentColor(.black)
                                     .font(.title2)
                                     .foregroundColor(Color.init(.label).opacity(0.75))
-                                    .padding(.all)
-                                    //.background(Color.white)
-                                    //.cornerRadius(8)
-                                    //.border(Color.init(.label).opacity(0.75))
-                                
-                                
-                                    //.padding()
-                                    //.background(Color.gray.opacity(0.12))
-                                    .background(Color.gray.opacity(0.1))
-                                    .cornerRadius(15)
-                                    .padding(.horizontal)
+                                    .modifier(textFieldStyles())
                                 
                                    
                             }
@@ -108,18 +96,12 @@ struct Transfer : View {
                     
                     HStack{
                         Image(systemName: "ellipsis.bubble")
-                            .font(.title2)
-                            .foregroundColor(.black)
-                            .frame(width: 35)
+                            .modifier(textFieldImageStyles())
                         
                         TextField("Ingresa el concepto", text: $concepto)
                             
                     }
-                    .padding()
-                    //.background(Color.gray.opacity(0.12))
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(15)
-                    .padding(.horizontal)
+                    .modifier(textFieldStyles())
                     
                
                 
@@ -142,29 +124,19 @@ struct Transfer : View {
                     
                     HStack{
                         Image(systemName: "dollarsign.circle")
-                            .font(.title2)
-                            .foregroundColor(.black)
-                            .frame(width: 35)
+                            .modifier(textFieldImageStyles())
                         
                         TextField("Ingresa el monto", text: $monto)
                             
                     }
-                    .padding()
-                    //.background(Color.gray.opacity(0.12))
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(15)
-                    .padding(.horizontal)
+                    .modifier(textFieldStyles())
                             
                             Spacer().frame(height: 40)
                             
                             butonView()
                     
                 }
-                .padding()
-                .background(Color.white)
-                .cornerRadius(15)
-                .padding(.horizontal)
-                .shadow(color: .gray, radius: 2, x: 2, y: 4)
+                .modifier(boxTextFieldStyles())
                         
                        
                         
@@ -173,7 +145,7 @@ struct Transfer : View {
                 
               
             }
-            //Spacer()
+            
         }
         
         .navigationBarTitle("Transferir").navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
@@ -196,7 +168,6 @@ struct butonView : View{
         VStack{
             
     
-            //BOTON CON ALERTA
             Button(action: {
                 self.alertSwift = true
                 
@@ -205,11 +176,7 @@ struct butonView : View{
                     .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                 
             })
-                .background(Color(.orange))
-                .clipShape(Capsule())
-                //.padding(.top, 45)
-                .padding(.horizontal)
-                .cornerRadius(8)
+                .modifier(acceptButtonStyle())
                 .alert(isPresented: $alertSwift, content: {
                     
                     Alert(title: Text("Transferencia exitosa!"), message: Text("Tu transferencia se realizó correctamente"), dismissButton: .default(Text("Cerrar")))
@@ -217,19 +184,7 @@ struct butonView : View{
                 })
             
             
-            //BOTON SIN ALERTA
-            /*Button(action: {}, label: {
-                NavigationLink(destination: SuccessView()){
-                 Text("Transferir").font(.headline)
-                     .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                }
-                     
-             })
-                 .background(Color(.orange))
-                 .clipShape(Capsule())
-                 .padding(.top, 45)
-            
-            */
+        
             
             
             HStack{

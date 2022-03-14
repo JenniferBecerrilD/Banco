@@ -8,25 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		DA18C02D2726471500855617 /* BancoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C02C2726471500855617 /* BancoApp.swift */; };
-		DA18C02F2726471500855617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C02E2726471500855617 /* ContentView.swift */; };
+		DA18C02F2726471500855617 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C02E2726471500855617 /* MainView.swift */; };
 		DA18C0312726471C00855617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA18C0302726471C00855617 /* Assets.xcassets */; };
 		DA18C0342726471C00855617 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA18C0332726471C00855617 /* Preview Assets.xcassets */; };
-		DA18C04127264AD000855617 /* Cuentas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C04027264AD000855617 /* Cuentas.swift */; };
-		DA18C0452728E17F00855617 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0442728E17F00855617 /* RowView.swift */; };
-		DA18C0472729BAE300855617 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0462729BAE300855617 /* ListView.swift */; };
-		DA18C0492729FF1A00855617 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0482729FF1900855617 /* ListDetailView.swift */; };
+		DA18C04127264AD000855617 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C04027264AD000855617 /* Account.swift */; };
+		DA18C0452728E17F00855617 /* RowAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0442728E17F00855617 /* RowAccountView.swift */; };
+		DA18C0472729BAE300855617 /* ListAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0462729BAE300855617 /* ListAccountView.swift */; };
+		DA18C0492729FF1A00855617 /* ListAccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C0482729FF1900855617 /* ListAccountDetailView.swift */; };
 		DA18C04D272A273700855617 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C04C272A273700855617 /* MenuView.swift */; };
 		DA18C04F272A274C00855617 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C04E272A274C00855617 /* MenuHeaderView.swift */; };
 		DA18C051272A276B00855617 /* MenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C050272A276B00855617 /* MenuOptionView.swift */; };
 		DA18C053272A278500855617 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C052272A278500855617 /* MenuViewModel.swift */; };
-		DA18C055272AC07400855617 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C054272AC07400855617 /* LoginView.swift */; };
 		DA18C059272ACB6800855617 /* twitter-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA18C058272ACB6700855617 /* twitter-logo.jpg */; };
 		DA18C05B272ACBFB00855617 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA18C05A272ACBFB00855617 /* logo.png */; };
-		DA18C05D272AE88A00855617 /* Transferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C05C272AE88A00855617 /* Transferencias.swift */; };
-		DA18C05F272AE8F800855617 /* RowViewTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C05E272AE8F800855617 /* RowViewTrans.swift */; };
-		DA18C061272AEAAF00855617 /* ListViewTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C060272AEAAF00855617 /* ListViewTrans.swift */; };
+		DA18C05D272AE88A00855617 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C05C272AE88A00855617 /* Transfer.swift */; };
+		DA18C05F272AE8F800855617 /* RowTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C05E272AE8F800855617 /* RowTransferView.swift */; };
+		DA18C061272AEAAF00855617 /* ListTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18C060272AEAAF00855617 /* ListTransferView.swift */; };
 		DA46F8FA276782A1009AF23F /* Bar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46F8F9276782A0009AF23F /* Bar2View.swift */; };
-		DA57B70C2757D71D0006F6F1 /* Login2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B70B2757D71C0006F6F1 /* Login2View.swift */; };
+		DA57B70C2757D71D0006F6F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B70B2757D71C0006F6F1 /* LoginView.swift */; };
 		DA5A079227C688E700C232C0 /* RSAMobileCollectionSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5A079127C688E700C232C0 /* RSAMobileCollectionSDK.xcframework */; };
 		DA5A079327C688E700C232C0 /* RSAMobileCollectionSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA5A079127C688E700C232C0 /* RSAMobileCollectionSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA5A07A027C68C9E00C232C0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5A079527C6899400C232C0 /* CoreLocation.framework */; };
@@ -35,14 +34,15 @@
 		DA5A07A627C68CAC00C232C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5A079C27C689E400C232C0 /* Security.framework */; };
 		DA5A07A827C68CAF00C232C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5A079E27C689F600C232C0 /* SystemConfiguration.framework */; };
 		DA5A07AB27C6910000C232C0 /* RSAImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A07AA27C6910000C232C0 /* RSAImplementation.swift */; };
-		DA5AC0B92771913E009F4B42 /* Home2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AC0B82771913E009F4B42 /* Home2View.swift */; };
+		DA5A07B027DA4C0D00C232C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A07AF27DA4C0C00C232C0 /* Constants.swift */; };
+		DA5A07B227DA697000C232C0 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A07B127DA697000C232C0 /* ButtonStyles.swift */; };
+		DA5A07B427DA846D00C232C0 /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A07B327DA846D00C232C0 /* TextFieldStyles.swift */; };
+		DA5AC0B92771913E009F4B42 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AC0B82771913E009F4B42 /* ProfileView.swift */; };
 		DA653165276793E600C25DFC /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA653164276793E600C25DFC /* CoverView.swift */; };
-		DA653167276798A700C25DFC /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA653166276798A700C25DFC /* SuccessView.swift */; };
-		DA65316927679F4700C25DFC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65316827679F4700C25DFC /* ErrorView.swift */; };
 		DAA5B7F12734DF7C00A79A2A /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA5B7EE2734DF7B00A79A2A /* profile.png */; };
 		DAA5B7F22734DF7C00A79A2A /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA5B7EF2734DF7C00A79A2A /* share.png */; };
 		DAA5B7F32734DF7C00A79A2A /* transferir.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA5B7F02734DF7C00A79A2A /* transferir.png */; };
-		DAA5B7F527357A6900A79A2A /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B7F427357A6900A79A2A /* ModalView.swift */; };
+		DAA5B7F527357A6900A79A2A /* ModalAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B7F427357A6900A79A2A /* ModalAccountView.swift */; };
 		DAA5B7F7273E9F7200A79A2A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B7F6273E9F7200A79A2A /* AlertView.swift */; };
 		DAA5B7F9273EB46D00A79A2A /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B7F8273EB46D00A79A2A /* TransferView.swift */; };
 		DAA5B7FB274B4EEC00A79A2A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B7FA274B4EEB00A79A2A /* ButtonView.swift */; };
@@ -66,25 +66,24 @@
 /* Begin PBXFileReference section */
 		DA18C0292726471500855617 /* Banco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA18C02C2726471500855617 /* BancoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancoApp.swift; sourceTree = "<group>"; };
-		DA18C02E2726471500855617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA18C02E2726471500855617 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DA18C0302726471C00855617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA18C0332726471C00855617 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DA18C04027264AD000855617 /* Cuentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuentas.swift; sourceTree = "<group>"; };
-		DA18C0442728E17F00855617 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		DA18C0462729BAE300855617 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		DA18C0482729FF1900855617 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
+		DA18C04027264AD000855617 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		DA18C0442728E17F00855617 /* RowAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowAccountView.swift; sourceTree = "<group>"; };
+		DA18C0462729BAE300855617 /* ListAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAccountView.swift; sourceTree = "<group>"; };
+		DA18C0482729FF1900855617 /* ListAccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAccountDetailView.swift; sourceTree = "<group>"; };
 		DA18C04C272A273700855617 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DA18C04E272A274C00855617 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		DA18C050272A276B00855617 /* MenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionView.swift; sourceTree = "<group>"; };
 		DA18C052272A278500855617 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		DA18C054272AC07400855617 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DA18C058272ACB6700855617 /* twitter-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter-logo.jpg"; path = "../../../Downloads/twitter-logo.jpg"; sourceTree = "<group>"; };
 		DA18C05A272ACBFB00855617 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		DA18C05C272AE88A00855617 /* Transferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferencias.swift; sourceTree = "<group>"; };
-		DA18C05E272AE8F800855617 /* RowViewTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewTrans.swift; sourceTree = "<group>"; };
-		DA18C060272AEAAF00855617 /* ListViewTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTrans.swift; sourceTree = "<group>"; };
+		DA18C05C272AE88A00855617 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DA18C05E272AE8F800855617 /* RowTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTransferView.swift; sourceTree = "<group>"; };
+		DA18C060272AEAAF00855617 /* ListTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransferView.swift; sourceTree = "<group>"; };
 		DA46F8F9276782A0009AF23F /* Bar2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar2View.swift; sourceTree = "<group>"; };
-		DA57B70B2757D71C0006F6F1 /* Login2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login2View.swift; sourceTree = "<group>"; };
+		DA57B70B2757D71C0006F6F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DA5A079127C688E700C232C0 /* RSAMobileCollectionSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RSAMobileCollectionSDK.xcframework; path = "../../Downloads/SDK 4.4/rsa_mobile_sdk_collection_module_4.4/iOS/Framework/xcframework/RSAMobileCollectionSDK.xcframework"; sourceTree = "<group>"; };
 		DA5A079527C6899400C232C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DA5A079727C689AE00C232C0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -93,14 +92,15 @@
 		DA5A079C27C689E400C232C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA5A079E27C689F600C232C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DA5A07AA27C6910000C232C0 /* RSAImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSAImplementation.swift; path = ../../../../Downloads/RSAImplementation.swift; sourceTree = "<group>"; };
-		DA5AC0B82771913E009F4B42 /* Home2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2View.swift; sourceTree = "<group>"; };
+		DA5A07AF27DA4C0C00C232C0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA5A07B127DA697000C232C0 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		DA5A07B327DA846D00C232C0 /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		DA5AC0B82771913E009F4B42 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DA653164276793E600C25DFC /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
-		DA653166276798A700C25DFC /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
-		DA65316827679F4700C25DFC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DAA5B7EE2734DF7B00A79A2A /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		DAA5B7EF2734DF7C00A79A2A /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		DAA5B7F02734DF7C00A79A2A /* transferir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transferir.png; sourceTree = "<group>"; };
-		DAA5B7F427357A6900A79A2A /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		DAA5B7F427357A6900A79A2A /* ModalAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAccountView.swift; sourceTree = "<group>"; };
 		DAA5B7F6273E9F7200A79A2A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		DAA5B7F8273EB46D00A79A2A /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		DAA5B7FA274B4EEB00A79A2A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -144,10 +144,12 @@
 		DA18C02B2726471500855617 /* Banco */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A07AD27DA4BC000C232C0 /* Definitions */,
+				DA5A07AC27D9C3FA00C232C0 /* CustomViews */,
 				DA5A079B27C689D300C232C0 /* Info.plist */,
 				DA18C04B272A26B900855617 /* Preview */,
-				DA18C03D272649F300855617 /* Vistas */,
-				DA18C03A2726495900855617 /* Datos */,
+				DA18C03D272649F300855617 /* Views */,
+				DA18C03A2726495900855617 /* Data */,
 				DA18C0302726471C00855617 /* Assets.xcassets */,
 				DAA5B7EE2734DF7B00A79A2A /* profile.png */,
 				DAA5B7EF2734DF7C00A79A2A /* share.png */,
@@ -168,39 +170,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DA18C03A2726495900855617 /* Datos */ = {
+		DA18C03A2726495900855617 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DA18C04027264AD000855617 /* Cuentas.swift */,
-				DA18C05C272AE88A00855617 /* Transferencias.swift */,
+				DA18C04027264AD000855617 /* Account.swift */,
+				DA18C05C272AE88A00855617 /* Transfer.swift */,
 			);
-			path = Datos;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		DA18C03D272649F300855617 /* Vistas */ = {
+		DA18C03D272649F300855617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA18C02E2726471500855617 /* ContentView.swift */,
+				DA653164276793E600C25DFC /* CoverView.swift */,
+				DA18C02E2726471500855617 /* MainView.swift */,
 				DA18C02C2726471500855617 /* BancoApp.swift */,
-				DA18C0442728E17F00855617 /* RowView.swift */,
-				DA18C0462729BAE300855617 /* ListView.swift */,
-				DA18C0482729FF1900855617 /* ListDetailView.swift */,
-				DA18C054272AC07400855617 /* LoginView.swift */,
-				DA18C05E272AE8F800855617 /* RowViewTrans.swift */,
-				DA18C060272AEAAF00855617 /* ListViewTrans.swift */,
-				DAA5B7F427357A6900A79A2A /* ModalView.swift */,
+				DA18C0462729BAE300855617 /* ListAccountView.swift */,
+				DA18C0482729FF1900855617 /* ListAccountDetailView.swift */,
+				DA18C060272AEAAF00855617 /* ListTransferView.swift */,
+				DAA5B7F427357A6900A79A2A /* ModalAccountView.swift */,
 				DAA5B7F6273E9F7200A79A2A /* AlertView.swift */,
 				DAA5B7F8273EB46D00A79A2A /* TransferView.swift */,
 				DAA5B7FA274B4EEB00A79A2A /* ButtonView.swift */,
-				DA57B70B2757D71C0006F6F1 /* Login2View.swift */,
+				DA57B70B2757D71C0006F6F1 /* LoginView.swift */,
 				DAD9159C275FE13B009AB80E /* BarView.swift */,
 				DA46F8F9276782A0009AF23F /* Bar2View.swift */,
-				DA653164276793E600C25DFC /* CoverView.swift */,
-				DA653166276798A700C25DFC /* SuccessView.swift */,
-				DA65316827679F4700C25DFC /* ErrorView.swift */,
-				DA5AC0B82771913E009F4B42 /* Home2View.swift */,
+				DA5AC0B82771913E009F4B42 /* ProfileView.swift */,
 			);
-			path = Vistas;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DA18C04B272A26B900855617 /* Preview */ = {
@@ -225,6 +222,33 @@
 				DA5A079127C688E700C232C0 /* RSAMobileCollectionSDK.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA5A07AC27D9C3FA00C232C0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DA18C0442728E17F00855617 /* RowAccountView.swift */,
+				DA18C05E272AE8F800855617 /* RowTransferView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DA5A07AD27DA4BC000C232C0 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				DA5A07AE27DA4BD500C232C0 /* Styles */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		DA5A07AE27DA4BD500C232C0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				DA5A07AF27DA4C0C00C232C0 /* Constants.swift */,
+				DA5A07B127DA697000C232C0 /* ButtonStyles.swift */,
+				DA5A07B327DA846D00C232C0 /* TextFieldStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,28 +331,28 @@
 				DA46F8FA276782A1009AF23F /* Bar2View.swift in Sources */,
 				DA18C04D272A273700855617 /* MenuView.swift in Sources */,
 				DA18C051272A276B00855617 /* MenuOptionView.swift in Sources */,
-				DA18C05D272AE88A00855617 /* Transferencias.swift in Sources */,
+				DA18C05D272AE88A00855617 /* Transfer.swift in Sources */,
 				DAD9159D275FE13B009AB80E /* BarView.swift in Sources */,
 				DA5A07AB27C6910000C232C0 /* RSAImplementation.swift in Sources */,
+				DA5A07B027DA4C0D00C232C0 /* Constants.swift in Sources */,
 				DA18C053272A278500855617 /* MenuViewModel.swift in Sources */,
-				DA65316927679F4700C25DFC /* ErrorView.swift in Sources */,
-				DA18C02F2726471500855617 /* ContentView.swift in Sources */,
-				DA18C05F272AE8F800855617 /* RowViewTrans.swift in Sources */,
-				DA5AC0B92771913E009F4B42 /* Home2View.swift in Sources */,
-				DA18C04127264AD000855617 /* Cuentas.swift in Sources */,
+				DA18C02F2726471500855617 /* MainView.swift in Sources */,
+				DA18C05F272AE8F800855617 /* RowTransferView.swift in Sources */,
+				DA5AC0B92771913E009F4B42 /* ProfileView.swift in Sources */,
+				DA18C04127264AD000855617 /* Account.swift in Sources */,
 				DA653165276793E600C25DFC /* CoverView.swift in Sources */,
 				DAA5B7FB274B4EEC00A79A2A /* ButtonView.swift in Sources */,
-				DA57B70C2757D71D0006F6F1 /* Login2View.swift in Sources */,
-				DA18C0472729BAE300855617 /* ListView.swift in Sources */,
+				DA57B70C2757D71D0006F6F1 /* LoginView.swift in Sources */,
+				DA18C0472729BAE300855617 /* ListAccountView.swift in Sources */,
 				DAA5B7F9273EB46D00A79A2A /* TransferView.swift in Sources */,
-				DAA5B7F527357A6900A79A2A /* ModalView.swift in Sources */,
-				DA18C0492729FF1A00855617 /* ListDetailView.swift in Sources */,
-				DA18C055272AC07400855617 /* LoginView.swift in Sources */,
+				DAA5B7F527357A6900A79A2A /* ModalAccountView.swift in Sources */,
+				DA5A07B427DA846D00C232C0 /* TextFieldStyles.swift in Sources */,
+				DA18C0492729FF1A00855617 /* ListAccountDetailView.swift in Sources */,
 				DA18C02D2726471500855617 /* BancoApp.swift in Sources */,
+				DA5A07B227DA697000C232C0 /* ButtonStyles.swift in Sources */,
 				DAA5B7F7273E9F7200A79A2A /* AlertView.swift in Sources */,
-				DA653167276798A700C25DFC /* SuccessView.swift in Sources */,
-				DA18C0452728E17F00855617 /* RowView.swift in Sources */,
-				DA18C061272AEAAF00855617 /* ListViewTrans.swift in Sources */,
+				DA18C0452728E17F00855617 /* RowAccountView.swift in Sources */,
+				DA18C061272AEAAF00855617 /* ListTransferView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

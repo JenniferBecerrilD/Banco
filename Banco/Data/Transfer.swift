@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 
-struct Transferencia {
+struct Transfers {
     
     var id: Int
-    var nombre: String
-    var numero: String
-    var cantidad: String
+    var name: String
+    var number: String
+    var quantity: String
     var avatar: Image
 }

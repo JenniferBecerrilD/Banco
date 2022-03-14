@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 
-struct Cuenta {
+struct Accounts {
     
     var id: Int
-    var nombre: String
-    var numero: String
+    var name: String
+    var number: String
     var avatar: Image
 }
 

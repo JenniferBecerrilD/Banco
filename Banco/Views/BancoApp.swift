@@ -11,7 +11,7 @@ import SwiftUI
 struct BancoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().onAppear {
+            MainView().onAppear {
                 let sdkCollection = RSAImplementation()
                 sdkCollection.collectData {
                     print($0)
@@ -21,11 +21,4 @@ struct BancoApp: App {
     }
 }
 
-/*@main
-struct BancoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}*/
+

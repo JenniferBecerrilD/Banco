@@ -11,7 +11,7 @@ struct CoverView: View {
     var body: some View {
         
         ZStack{
-            Color(.gray).opacity(0.06).ignoresSafeArea(.all)
+            Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
             Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

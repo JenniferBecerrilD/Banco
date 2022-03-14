@@ -43,8 +43,8 @@ enum MenuViewModel: Int, CaseIterable{
             switch self {
             case .transferir: return AnyView(TransferView())
             case .retiroSinTarjeta: return AnyView(TransferView())
-            case .cuentas: return AnyView(ListView())
-            case .cerrarSesion: return AnyView(Login2View())
+            case .cuentas: return AnyView(ListAccountView())
+            case .cerrarSesion: return AnyView(LoginView())
 
             }
         }

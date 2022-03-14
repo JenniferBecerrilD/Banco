@@ -9,34 +9,42 @@ import SwiftUI
 
 struct BarView: View {
     
+    @State var selection: Int = 0
     
     init(){
-        UITabBar.appearance().barTintColor = UIColor.blue
+        UITabBar.appearance().backgroundColor = UIColor(Color(Constants.mainOrangeColor))
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white.withAlphaComponent(0.6)
     }
+
     
     var body: some View {
         TabView{
-            Text("")
+            
+            ListAccountView()
             .tabItem{
                 Image(systemName: "person")
             }
             
             
-            Text("")
+            //Text("")
+            MainView()
             .tabItem{
                 Image(systemName: "house")
             }
             
             
-            Text("")
+            //Text("")
+            TransferView()
             .tabItem{
-                Image(systemName: "creditcard")
+                Image(systemName: "arrow.left.arrow.right")
             }
             
         }
-        .edgesIgnoringSafeArea(.top)
-        .accentColor(.orange)
         
+        //.edgesIgnoringSafeArea(.top)
+        .accentColor(.white)
+        .font(.headline)
+                
     }
 }
 

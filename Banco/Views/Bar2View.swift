@@ -15,22 +15,22 @@ struct Bar2View: View {
     var body: some View {
         
         TabView(selection: $selection) {
-            //Text("")
-            ContentView()
+            Text("")
+            //ContentView()
                 .tabItem{
                     
                 }
                 .tag(0)
             
-            //Text("")
-            ListView()
+            Text("")
+            //ListView()
                 .tabItem{
                     
                 }
                 .tag(1)
             
-            //Text("")
-            TransferView()
+            Text("")
+            //TransferView()
                 .tabItem{
                     
                 }

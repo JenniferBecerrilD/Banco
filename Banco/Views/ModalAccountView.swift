@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ModalView: View {
+struct ModalAccountView: View {
     
     
     @Binding var isShowing: Bool
@@ -60,7 +60,7 @@ struct ModalView: View {
         
         
         ZStack{
-            Color(.gray).opacity(0.1).ignoresSafeArea(.all)
+            Color(Constants.mainGrayColor).ignoresSafeArea(.all)
             ZStack {
                 
                 
@@ -88,26 +88,19 @@ struct ModalView: View {
                             Text("Clabe")
                                 .font(.headline)
                                 .foregroundColor(Color.black)
-                            //.frame(alignment: .leading)
                                
                         }
-                            
+            
             
                         
                         HStack{
                             Image(systemName: "key.fill")
-                                .font(.title2)
-                                .foregroundColor(.black)
-                                .frame(width: 35)
+                                .modifier(textFieldImageStyles())
                             
                             TextField("Ingresa la clabe", text: $clabe)
                                 
                         }
-                        .padding()
-                        //.background(Color.gray.opacity(0.12))
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(15)
-                        .padding(.horizontal)
+                        .modifier(textFieldStyles())
                         
                    
                     
@@ -120,7 +113,7 @@ struct ModalView: View {
                             Text("Alias")
                                 .font(.headline)
                                 .foregroundColor(Color.black)
-                            //.frame(alignment: .leading)
+                           
                                
                         }
                             
@@ -128,28 +121,18 @@ struct ModalView: View {
                         
                         HStack{
                             Image(systemName: "person.fill.checkmark")
-                                .font(.title2)
-                                .foregroundColor(.black)
-                                .frame(width: 35)
+                                .modifier(textFieldImageStyles())
                             
                             TextField("Ingresa el alias", text: $alias)
                                 
                         }
-                        .padding()
-                        //.background(Color.gray.opacity(0.12))
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(15)
-                        .padding(.horizontal)
+                        .modifier(textFieldStyles())
                         
                         Spacer().frame(height: 40)
                         
                         buttonView()
                     }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .padding(.horizontal)
-                    .shadow(color: .gray, radius: 2, x: 2, y: 4)
+                    .modifier(boxTextFieldStyles())
         
                   
 
@@ -227,9 +210,9 @@ struct ModalView: View {
 }
 
 
-struct ModalView_Previews: PreviewProvider {
+struct ModalAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListAccountView()
     }
 }
 
@@ -250,10 +233,7 @@ struct buttonView : View{
                     .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                 
             })
-                .background(Color(.orange))
-                .clipShape(Capsule())
-                .padding(.horizontal)
-                .cornerRadius(8)
+                .modifier(acceptButtonStyle())
                 .alert(isPresented: $alertSwift, content: {
                     
                     Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))

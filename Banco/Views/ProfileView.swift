@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home2View: View {
+struct ProfileView: View {
     
     let maxHeight = UIScreen.main.bounds.height / 3
     
@@ -21,7 +21,7 @@ struct Home2View: View {
                     
                     topBar(topEdge: topEdge)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .background(Color.orange)
+                    .background(Color(Constants.mainOrangeColor))
                 }
                 .frame(height: maxHeight)
                 
@@ -30,9 +30,9 @@ struct Home2View: View {
     }
 }
 
-struct Home2View_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
 
@@ -45,8 +45,7 @@ struct topBar: View{
             Image(systemName: "person.fill")
                 .resizable().frame(width: 60, height: 60)
                 .padding().foregroundColor(Color.black)
-                /*.resizable().frame(width: 60, height: 60).clipShape(Circle()).overlay(Circle().stroke(Color.white, lineWidth: 4)).shadow(color: Color.gray, radius: 5)
-                .padding().foregroundColor(Color.white)*/
+                
                 
             Text("Cuenta de ahorro")
                 .font(.title)
