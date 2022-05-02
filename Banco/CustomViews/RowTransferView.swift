@@ -15,14 +15,17 @@ struct RowTransferView: View {
     var body: some View {
         
         HStack{
-            transfer.avatar.resizable().frame(width: 40, height: 40).padding(10)
+            
+            Image(systemName: "arrow.left.arrow.right").resizable().frame(width: 40, height: 40).padding(10)
+            
             
             VStack(alignment:.leading){
-                Text(transfer.name)
+                Text(transfer.concept)
                     .font(.title2)
-                Text(transfer.number).font(.headline)
-                Text(transfer.quantity)
-                    .font(.subheadline)
+                Text(transfer.destinationAccount).font(.headline)
+                //Text(transfer.amount)
+                    //.font(.subheadline)
+                Text("Cantidad: \(transfer.amount)")
             }
             Spacer()
         }
@@ -32,6 +35,6 @@ struct RowTransferView: View {
     struct RowViewTransfer_Previews: PreviewProvider {
     static var previews: some View {
         
-        RowTransferView(transfer: Transfers(id: 1, name: "Transferencia 1", number: "Cta destino: XXX574", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right")))
+        RowTransferView(transfer: Transfers(id: 1, concept: "Transferencia 1", destinationAccount: "Cta destino: XXX574", amount: 500))
     }
 }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 
-private let transfer = [Transfers(id: 1, name: "Transferencia 1", number: "Cta destino: XXX574", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right")),
-                              Transfers(id: 2, name: "Transferencia 2", number: "Cta destino: XXX575", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right")),
-                              Transfers(id: 3, name: "Transferencia 3", number: "Cta destino: XXX576", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right")),
-                              Transfers(id: 4, name: "Transferencia 4", number: "Cta destino: XXX577", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right")),
-                              Transfers(id: 5, name: "Transferencia 5", number: "Cta destino: XXX578", quantity: "$500", avatar: Image(systemName: "arrow.left.arrow.right"))]
+private let transfer = [Transfers(id: 1, concept: "Transferencia 1", destinationAccount: "Cta destino: XXX574", amount: 500),
+                              Transfers(id: 2, concept: "Transferencia 2", destinationAccount: "Cta destino: XXX575", amount: 500),
+                              Transfers(id: 3, concept: "Transferencia 3", destinationAccount: "Cta destino: XXX576", amount: 500),
+                              Transfers(id: 4, concept: "Transferencia 4", destinationAccount: "Cta destino: XXX577", amount: 500),
+                              Transfers(id: 5, concept: "Transferencia 5", destinationAccount: "Cta destino: XXX578", amount: 500)]
 
 
 
@@ -85,7 +85,7 @@ struct Box {
 struct HomeView: View {
     
     @State var selection: Int = 0
-    
+    @ObservedObject var transferViewModel = TransferViewModel()
     var body: some View {
         
 
@@ -119,7 +119,7 @@ struct HomeView: View {
                     Spacer()
                     VStack{
                         Button(action: {}) {
-                            NavigationLink(destination: ListAccountView()){
+                            NavigationLink(destination: ListPayeeView()){
                             Image(systemName: "person.fill")
                                 .modifier(mainButtonStyle())
                             }
@@ -162,11 +162,15 @@ struct HomeView: View {
                 VStack (alignment: .leading){
                     
                     Text("Movimientos").font(.title)
-                    List(transfer, id: \.id){
+                    /*List(transfer, id: \.id){
                         transferencia in RowTransferView(transfer:transferencia)
                         
                         
+                    }*/
+                    List(transferViewModel.trans.data,id: \.id){transfers in RowTransferView(transfer:transfers)
+                    
                     }
+                   
                 }.padding()
             
             

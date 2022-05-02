@@ -21,15 +21,14 @@ struct TransferView_Previews: PreviewProvider {
 
 struct Transfer : View {
     
-    @State var destiny = ""
+   
+    
+    @State var destinationAccount = ""
     @State var concept = ""
-    @State var money = ""
+    @State var amount = ""
     
-    @State var cuenta = ""
-    @State var concepto = ""
-    @State var monto = ""
-    
-    
+    @ObservedObject var addTransferViewModel = AddTransferViewModel()
+    @State private var alertSwift = false
     @State private var isExpanded = false
     @State private var selectedNum = 1
     
@@ -98,7 +97,7 @@ struct Transfer : View {
                         Image(systemName: "ellipsis.bubble")
                             .modifier(textFieldImageStyles())
                         
-                        TextField("Ingresa el concepto", text: $concepto)
+                        TextField("Ingresa el concepto", text: $concept)
                             
                     }
                     .modifier(textFieldStyles())
@@ -126,14 +125,25 @@ struct Transfer : View {
                         Image(systemName: "dollarsign.circle")
                             .modifier(textFieldImageStyles())
                         
-                        TextField("Ingresa el monto", text: $monto)
+                        TextField("Ingresa el monto", text: $amount)
                             
                     }
                     .modifier(textFieldStyles())
                             
                             Spacer().frame(height: 40)
                             
-                            butonView()
+                            Button(action: {addTransferViewModel.validateInfo(total: amount, detail: concept)}/*, label: {
+                                NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
+                                 Text("Transferir").font(.headline)
+                                     .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                                }
+                               //Aqui termina boton
+                                .modifier(acceptButtonStyle())
+                                .alert(isPresented: $alertSwift, content: {
+                                    
+                                    Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
+                                    
+                                })
                     
                 }
                 .modifier(boxTextFieldStyles())

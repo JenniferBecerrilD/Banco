@@ -20,7 +20,7 @@ struct BarView: View {
     var body: some View {
         TabView{
             
-            ListAccountView()
+            ListPayeeView()
             .tabItem{
                 Image(systemName: "person")
             }

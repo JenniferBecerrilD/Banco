@@ -1,4 +1,4 @@
-//
+//CREAR CUENTA CON BACKEND FUNCIONAL
 //  ModalView.swift
 //  Banco
 //
@@ -12,11 +12,11 @@ struct ModalAccountView: View {
     
     @Binding var isShowing: Bool
     @State private var isDragging = false
-    @State var name = ""
-    @State var account = ""
     
-    @State var clabe = ""
-    @State var alias = ""
+    @State var accountNumber = ""
+    @State var nickname = ""
+    @State private var alertSwift = false
+    @ObservedObject var addAccountViewModel = AddAccountViewModel()
     
     //@State private var curHeight: CGFloat = 400
     @State private var curHeight: CGFloat = 500
@@ -85,7 +85,7 @@ struct ModalAccountView: View {
                     
                     VStack (alignment: .leading){
                         VStack{
-                            Text("Clabe")
+                            Text("Cuenta")
                                 .font(.headline)
                                 .foregroundColor(Color.black)
                                
@@ -94,10 +94,10 @@ struct ModalAccountView: View {
             
                         
                         HStack{
-                            Image(systemName: "key.fill")
+                            Image(systemName: "creditcard")
                                 .modifier(textFieldImageStyles())
                             
-                            TextField("Ingresa la clabe", text: $clabe)
+                            TextField("Ingresa la cuenta", text: $accountNumber)
                                 
                         }
                         .modifier(textFieldStyles())
@@ -110,7 +110,7 @@ struct ModalAccountView: View {
                     
                     
                         VStack{
-                            Text("Alias")
+                            Text("Usuario")
                                 .font(.headline)
                                 .foregroundColor(Color.black)
                            
@@ -123,14 +123,26 @@ struct ModalAccountView: View {
                             Image(systemName: "person.fill.checkmark")
                                 .modifier(textFieldImageStyles())
                             
-                            TextField("Ingresa el alias", text: $alias)
+                            TextField("Ingresa el usuario", text: $nickname)
                                 
                         }
                         .modifier(textFieldStyles())
                         
                         Spacer().frame(height: 40)
                         
-                        buttonView()
+                        Button(action: {addAccountViewModel.validateData(name: nickname, account: accountNumber)}/*, label: {
+                            NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
+                             Text("Crear cuenta").font(.headline)
+                                 .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                            }
+                           //Aqui termina boton
+                            .modifier(acceptButtonStyle())
+                            .alert(isPresented: $alertSwift, content: {
+                                
+                                Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
+                                
+                            })
+                            
                     }
                     .modifier(boxTextFieldStyles())
         
@@ -212,7 +224,7 @@ struct ModalAccountView: View {
 
 struct ModalAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        ListAccountView()
+        ListPayeeView()
     }
 }
 

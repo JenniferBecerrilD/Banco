@@ -1,33 +1,13 @@
 //
-//  RowView.swift
+//  RowAccountView.swift
 //  Banco
 //
-//  Created by Jennifer Becerril on 26/10/21.
+//  Created by Jennifer Becerril on 21/04/22.
 //
 
-import SwiftUI
+import Foundation
 
-struct RowAccountView: View {
-    
-    var account: Accounts
-    
-    var body: some View {
-        HStack{
-            account.avatar.resizable().frame(width: 40, height: 40).padding(10)
-            
-            VStack(alignment:.leading){
-                Text(account.name)
-                    .font(.title2)
-                Text(account.number)
-                    .font(.headline)
-            }
-            Spacer()
-        }
-    }
-}
+let accounts = [
+    AccountBodyResponse(number: "12345", nickname: "Cuenta de ahorro", balance: "10")
+]
 
-struct RowAccountView_Previews: PreviewProvider {
-    static var previews: some View {
-        RowAccountView(account: Accounts(id: 1, name: "Prueba 1", number: "Cuenta: 5578475574", avatar: Image(systemName: "person.fill")))
-    }
-}

@@ -9,11 +9,10 @@ import Foundation
 import SwiftUI
 
 
-struct Transfers {
-    
+struct Transfers: Decodable, Identifiable{
+//struct Transfers{
     var id: Int
-    var name: String
-    var number: String
-    var quantity: String
-    var avatar: Image
+    var concept: String
+    var destinationAccount: String
+    var amount: Int
 }

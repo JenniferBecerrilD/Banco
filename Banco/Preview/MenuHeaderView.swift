@@ -56,5 +56,6 @@ struct MenuHeaderView: View {
 struct MenuHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         MenuHeaderView(isShowing: .constant(true))
+        
     }
 }

@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-private let account = [Accounts(id: 1, name: "Prueba 1", number: "Cuenta: 5578475574", avatar: Image(systemName: "person.fill")),
-                       Accounts(id: 2, name: "Prueba 2", number: "Cuenta: 5578475575", avatar: Image(systemName: "person.fill")),
-                       Accounts(id: 3, name: "Prueba 3", number: "Cuenta: 5578475576", avatar: Image(systemName: "person.fill")),
-                       Accounts(id: 4, name: "Prueba 4", number: "Cuenta: 5578475577", avatar: Image(systemName: "person.fill")),
-                       Accounts(id: 5, name: "Prueba 5", number: "Cuenta: 5578475578", avatar: Image(systemName: "person.fill"))]
+private let payee = [PayeeBodyResponse(id: 1, nickname: "Prueba 1", accountNumber: "Cuenta: 5578475574", userId: "5578475574"),
+                       PayeeBodyResponse(id: 2, nickname: "Prueba 2", accountNumber: "Cuenta: 5578475575", userId: "5578475574"),
+                       PayeeBodyResponse(id: 3, nickname: "Prueba 3", accountNumber: "Cuenta: 5578475576", userId: "5578475574"),
+                       PayeeBodyResponse(id: 4, nickname: "Prueba 4", accountNumber: "Cuenta: 5578475577", userId: "5578475574"),
+                       PayeeBodyResponse(id: 5, nickname: "Prueba 5", accountNumber: "Cuenta: 5578475578", userId: "5578475574")]
 
-struct ListAccountView: View {
+struct ListPayeeView: View {
     //@State private var text = "Hello"
     @State private var change : Bool = false
     @State private var showModal = false
     @State var selection: Int = 0
+    //@State var selection: Int = 0
     
+    @ObservedObject var payeeViewModel = PayeeViewModel()
     var body: some View {
-        NavigationView {
+        
             
            
             ZStack(alignment: .bottomTrailing){
@@ -35,13 +37,16 @@ struct ListAccountView: View {
                     /*Text("Cuentas registradas")
                         .fontWeight(.heavy).font(.largeTitle).padding([.top,.bottom], 9)*/
                     
-                    List(account, id: \.id){
+                    /*List(account, id: \.id){
                     
                     accounts in NavigationLink(destination: ListAccountDetailView(account:accounts)){ RowAccountView(account:accounts)
                     }
+                    }*/
+                    
+                    List(payeeViewModel.payees.data,id: \.id){payees in NavigationLink(destination: ListPayeeDetailView(payee:payees)){ RowPayeeView(payee:payees)}
+                    
                     }
-                    
-                    
+                   
                 }
             
                 
@@ -60,12 +65,11 @@ struct ListAccountView: View {
                 
                 ModalAccountView(isShowing: $showModal)
                 
-        }
-            
-        }.navigationBarTitle("Cuentas").navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+            }.navigationBarTitle("Cuentas").navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+      
         
         
-        //Spacer()
+        Spacer()
         
         }
 }
@@ -81,10 +85,10 @@ struct ListAccountView: View {
 
 
 
-struct ListAccountView_Previews: PreviewProvider {
+struct ListPayeeView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ListAccountView()
+        ListPayeeView()
         
     }
 }

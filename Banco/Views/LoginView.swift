@@ -24,9 +24,9 @@ struct LoginView_Previews: PreviewProvider {
 
 struct Home : View {
     
-    @State var userName = ""
+    @State var username = ""
     @State var password = ""
-    
+    @ObservedObject var loginViewModel = LoginViewModel()
     var body : some View {
         ZStack {
             Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
@@ -60,7 +60,7 @@ struct Home : View {
                         Image(systemName: "person")
                             .modifier(textFieldImageStyles())
                         
-                        TextField("Ingresa tu usuario", text: $userName)
+                        TextField("Ingresa tu usuario", text: $username)
                            
                             
                     }
@@ -86,14 +86,25 @@ struct Home : View {
                     
                     Spacer().frame(height: 40)
                     
-                    Button(action: {}, label: {
+                    //BOTON CON DESTINO
+                    /*Button(action: {loginViewModel.validateData(nickname: username, secret: password)}, label: {
                         NavigationLink(destination: BarView().navigationBarBackButtonHidden(true)){
                          Text("Iniciar sesión").font(.headline)
                              .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
                         }
                        
                         
-                     })
+                     })*/
+                    
+                    
+                    //BOTON SIN DESTINO PERO FUNCIONAL
+                    Button(action: {loginViewModel.validateData(nickname: username, secret: password)}/*, label: {
+                        NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
+                         Text("Iniciar sesión").font(.headline)
+                             .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                        }
+                       //Aqui termina boton
+                        
                         .modifier(acceptButtonStyle())
                 }
                 .modifier(boxTextFieldStyles())
