@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BarView: View {
     
-    @State var selection: Int = 0
+   @State var selection: Int = 0
     
     init(){
         UITabBar.appearance().backgroundColor = UIColor(Color(Constants.mainOrangeColor))
@@ -18,27 +18,27 @@ struct BarView: View {
 
     
     var body: some View {
-        TabView{
+        TabView(selection: $selection){
             
             ListPayeeView()
             .tabItem{
                 Image(systemName: "person")
             }
-            
+            .tag(1)
             
             //Text("")
             MainView()
             .tabItem{
                 Image(systemName: "house")
             }
-            
+            .tag(0)
             
             //Text("")
             TransferView()
             .tabItem{
                 Image(systemName: "arrow.left.arrow.right")
             }
-            
+            .tag(2)
         }
         
         //.edgesIgnoringSafeArea(.top)

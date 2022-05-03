@@ -5,7 +5,7 @@
 //  Created by Jennifer Becerril on 13/12/21.
 //
 
-import SwiftUI
+/*import SwiftUI
 
 
 struct Bar2View: View {
@@ -94,3 +94,4 @@ struct Bar2View_Previews: PreviewProvider {
         Bar2View()
     }
 }
+*/

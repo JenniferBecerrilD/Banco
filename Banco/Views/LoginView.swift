@@ -98,14 +98,16 @@ struct Home : View {
                     
                     
                     //BOTON SIN DESTINO PERO FUNCIONAL
-                    Button(action: {loginViewModel.validateData(nickname: username, secret: password)}/*, label: {
-                        NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
-                         Text("Iniciar sesión").font(.headline)
-                             .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                        }
-                       //Aqui termina boton
-                        
+                   
+                        Button(action: {loginViewModel.validateData(nickname: username, secret: password)}/*, label: {
+                            NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
+                             Text("Iniciar sesión").font(.headline)
+                                 .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                            }
+                           //Aqui termina boton
+                            
                         .modifier(acceptButtonStyle())
+                    
                 }
                 .modifier(boxTextFieldStyles())
                 

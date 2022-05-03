@@ -77,7 +77,7 @@ struct ModalAccountView: View {
                 
                 VStack{
                     
-                    Spacer()
+                   // Spacer()
                     Text("Crear cuenta")
                         .font(.headline)
                     

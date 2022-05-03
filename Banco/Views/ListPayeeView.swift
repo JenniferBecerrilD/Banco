@@ -43,8 +43,12 @@ struct ListPayeeView: View {
                     }
                     }*/
                     
-                    List(payeeViewModel.payees.data,id: \.id){payees in NavigationLink(destination: ListPayeeDetailView(payee:payees)){ RowPayeeView(payee:payees)}
-                    
+                    if #available(iOS 15.0, *) {
+                        List(payeeViewModel.payees.data,id: \.id){payees in NavigationLink(destination: ListPayeeDetailView(payee:payees)){ RowPayeeView(payee:payees)}
+                            
+                        }.refreshable{payeeViewModel.getPayees()}
+                    } else {
+                        // Fallback on earlier versions
                     }
                    
                 }

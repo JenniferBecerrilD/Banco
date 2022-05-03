@@ -132,20 +132,23 @@ struct Transfer : View {
                             
                             Spacer().frame(height: 40)
                             
-                            Button(action: {addTransferViewModel.validateInfo(total: amount, detail: concept)}/*, label: {
-                                NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
-                                 Text("Transferir").font(.headline)
-                                     .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                                }
-                               //Aqui termina boton
-                                .modifier(acceptButtonStyle())
-                                .alert(isPresented: $alertSwift, content: {
-                                    
-                                    Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
-                                    
-                                })
+                            if #available(iOS 15.0, *) {
+                                Button(action: {addTransferViewModel.validateInfo(total: amount, detail: concept)}/*, label: {
+                                                                                                                   NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
+                                                                                                                       Text("Transferir").font(.headline)
+                                                                                                                           .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
+                                                                                                                   }
+                                //Aqui termina boton
+                                                                                                                   .modifier(acceptButtonStyle())
+                                                                                                                   .alert(isPresented: $alertSwift, content: {
+                                                                                                                       
+                                                                                                                       Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
+                                                                                                                       
+                                                                                                                   })
+                            }
+}
                     
-                }
+                
                 .modifier(boxTextFieldStyles())
                         
                        
