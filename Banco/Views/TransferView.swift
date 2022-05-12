@@ -23,50 +23,46 @@ struct Transfer : View {
     
    
     
-    @State var destinationAccount = ""
+    @State var destinationAccount = "Elige una cuenta"
+    //@State var sourceAccount = ""
     @State var concept = ""
     @State var amount = ""
     
     @ObservedObject var addTransferViewModel = AddTransferViewModel()
+    @ObservedObject var payeeViewModel = PayeeViewModel()
+    //@ObservedObject var accountViewModel = AccountViewModel()
+    
     @State private var alertSwift = false
     @State private var isExpanded = false
-    @State private var selectedNum = 1
+    //@State private var selectedNum = "1"
     
     @State var selection: Int = 0
-    
+    @Environment (\.colorScheme) var colorScheme
     var body : some View{
         
         ZStack {
-            Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
+            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
+            //Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
             
             
             
             
             VStack{
-                
-       
-              
-                        
                         
                         VStack (alignment: .leading){
                             VStack (alignment: .leading){
                                 Text("Cuenta de destino")
                                     .font(.headline)
-                                    .foregroundColor(Color.black)
+                                    //.foregroundColor(Color.black)
                                 
                                 
-                                DisclosureGroup("\(selectedNum)", isExpanded: $isExpanded) {
+                                DisclosureGroup("\(destinationAccount)", isExpanded: $isExpanded) {
                                     ScrollView{
                                     VStack {
-                                        ForEach(5578475574...5578475578, id: \.self){
-                                            num in Text ("\(num)").font(.title3)
-                                                .padding(.all).onTapGesture{
-                                                    self.selectedNum = num
-                                                    withAnimation{
-                                                    self.isExpanded.toggle()
-                                                }
-                                                }
-                                        }
+                                        ForEach(0 ..< payeeViewModel.payees.data.count, id: \.self){ num in Text ("\(payeeViewModel.payees.data[num].accountNumber)").font(.title3).padding(.all).onTapGesture{self.destinationAccount = payeeViewModel.payees.data[num].accountNumber
+                                            withAnimation{self.isExpanded.toggle()}}}
+                                        
+                                    
                                     }
                                     }.frame(height: 150)
                                 }.accentColor(.black)
@@ -76,6 +72,7 @@ struct Transfer : View {
                                 
                                    
                             }
+                            //.modifier(textFieldStyles())
                                 
                 
                             
@@ -86,11 +83,11 @@ struct Transfer : View {
                     VStack{
                         Text("Concepto")
                             .font(.headline)
-                            .foregroundColor(Color.black)
+                            //.foregroundColor(Color.black)
                         //.frame(alignment: .leading)
                            
                     }
-                        
+                    .modifier(textFieldTextStyles())
         
                     
                     HStack{
@@ -114,10 +111,12 @@ struct Transfer : View {
                     VStack{
                         Text("Monto")
                             .font(.headline)
-                            .foregroundColor(Color.black)
+                            //.foregroundColor(Color.black)
                         //.frame(alignment: .leading)
                            
                     }
+                    .modifier(textFieldTextStyles())
+                   
                         
         
                     
@@ -133,7 +132,7 @@ struct Transfer : View {
                             Spacer().frame(height: 40)
                             
                             if #available(iOS 15.0, *) {
-                                Button(action: {addTransferViewModel.validateInfo(total: amount, detail: concept)}/*, label: {
+                                Button(action: {addTransferViewModel.validateInfo(destiny: destinationAccount, total: amount, detail: concept);self.alertSwift = true}/*, label: {
                                                                                                                    NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
                                                                                                                        Text("Transferir").font(.headline)
                                                                                                                            .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
@@ -142,7 +141,7 @@ struct Transfer : View {
                                                                                                                    .modifier(acceptButtonStyle())
                                                                                                                    .alert(isPresented: $alertSwift, content: {
                                                                                                                        
-                                                                                                                       Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
+                                                                                                                       Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registró correctamente"), dismissButton: .default(Text("Cerrar")))
                                                                                                                        
                                                                                                                    })
                             }

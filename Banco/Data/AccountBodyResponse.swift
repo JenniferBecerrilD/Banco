@@ -11,6 +11,6 @@ struct AccountBodyResponse: Decodable{
       //var id: Int
       var number: String
       var nickname: String
-      var balance: String
+      var balance: Int
     
 }

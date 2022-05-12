@@ -86,29 +86,28 @@ struct Home : View {
                     
                     Spacer().frame(height: 40)
                     
-                    //BOTON CON DESTINO
-                    /*Button(action: {loginViewModel.validateData(nickname: username, secret: password)}, label: {
+                    //BOTON CON DESTINO PERO NO SIRVE BACKEND
+                    Button(action: {
+                        loginViewModel.validateData(nickname: username, secret: password)
+                    }, label: {
                         NavigationLink(destination: BarView().navigationBarBackButtonHidden(true)){
                          Text("Iniciar sesión").font(.headline)
-                             .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                        }
-                       
-                        
-                     })*/
+                            .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()}
+                    })
                     
                     
                     //BOTON SIN DESTINO PERO FUNCIONAL
                    
-                        Button(action: {loginViewModel.validateData(nickname: username, secret: password)}/*, label: {
+                        /*Button(action: {loginViewModel.validateData(nickname: username, secret: password)}/*, label: {
                             NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
                              Text("Iniciar sesión").font(.headline)
                                  .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()
-                            }
+                            }*/
                            //Aqui termina boton
                             
                         .modifier(acceptButtonStyle())
-                    
                 }
+                
                 .modifier(boxTextFieldStyles())
                 
                 
@@ -118,4 +117,4 @@ struct Home : View {
             .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         }
     }
-}
+    }

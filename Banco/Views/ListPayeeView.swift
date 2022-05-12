@@ -19,16 +19,16 @@ struct ListPayeeView: View {
     @State private var showModal = false
     @State var selection: Int = 0
     //@State var selection: Int = 0
-    
+    @Environment (\.colorScheme) var colorScheme
     @ObservedObject var payeeViewModel = PayeeViewModel()
     var body: some View {
         
             
            
             ZStack(alignment: .bottomTrailing){
-                
+                Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
               
-                Color(Constants.mainOrangeColor).opacity(0.06).ignoresSafeArea(.all)
+               // Color(Constants.mainOrangeColor).opacity(0.06).ignoresSafeArea(.all)
                 
              
                 //Cuentas sin ZStack

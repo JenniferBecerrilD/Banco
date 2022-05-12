@@ -86,6 +86,7 @@ struct HomeView: View {
     
     @State var selection: Int = 0
     @ObservedObject var transferViewModel = TransferViewModel()
+    @Environment (\.colorScheme) var colorScheme
     var body: some View {
         
 
@@ -93,7 +94,8 @@ struct HomeView: View {
         
         
         ZStack {
-            Color(.gray).opacity(0.06).ignoresSafeArea(.all)
+            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
+            //Color(.gray).opacity(0.06).ignoresSafeArea(.all)
             //Color(.gray).opacity(0.06).ignoresSafeArea(.all)
             VStack {
                 
@@ -155,8 +157,8 @@ struct HomeView: View {
         
         
         ZStack {
-            
-            Color(Constants.mainGrayColor).ignoresSafeArea()
+            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
+            //Color(Constants.mainGrayColor).ignoresSafeArea()
             VStack (alignment: .leading){
                 
                 VStack (alignment: .leading){

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MenuHeaderView: View {
     @Binding var isShowing: Bool
-    
+    let account : AccountBodyResponse = accounts [0]
+    @ObservedObject var accountViewModel = AccountViewModel()
     var body: some View {
+        //Spacer()
         ZStack (alignment: .topTrailing){
             
             
@@ -32,11 +34,14 @@ struct MenuHeaderView: View {
                     .clipShape(Circle())
                     .padding(.bottom, 20)
                 
-                Text("Mi cuenta")
-                    .font(.system(size: 24, weight: .semibold))
                 
-                Text("12345678")
-                    .font(.system(size: 14))
+                
+                Text(accountViewModel.accountBodyResponse.nickname).font(.system(size: 24, weight: .semibold))
+                            
+                Text("\(accountViewModel.accountBodyResponse.balance)").font(.title2).font(.system(size: 14))
+                            
+                Text(accountViewModel.accountBodyResponse.number).font(.system(size: 14))
+                
                 
                 HStack(spacing: 12){
                     HStack(spacing: 4){

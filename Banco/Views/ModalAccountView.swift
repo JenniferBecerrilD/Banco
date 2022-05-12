@@ -30,7 +30,7 @@ struct ModalAccountView: View {
         let res = Double(curHeight - minHeight) / (maxHeight - minHeight)
         return max(0, min(1, res))
     }
-    
+    @Environment (\.colorScheme) var colorScheme
     var body: some View {
         
         ZStack(alignment: .bottom){
@@ -60,21 +60,22 @@ struct ModalAccountView: View {
         
         
         ZStack{
-            Color(Constants.mainGrayColor).ignoresSafeArea(.all)
+            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all)
+            //Color(Constants.mainGrayColor).ignoresSafeArea(.all)
             ZStack {
-                
+              
                 
                 Capsule()
                     .frame(width: 40, height: 6)
             }
             .frame(height: 40)
             .frame(maxWidth: .infinity)
-            .background(Color.white.opacity(0.00001))
+            //.background(Color.white.opacity(0.00001))
             .gesture(dragGesture)
             
             
             ZStack{
-                
+               
                 VStack{
                     
                    // Spacer()
@@ -87,9 +88,10 @@ struct ModalAccountView: View {
                         VStack{
                             Text("Cuenta")
                                 .font(.headline)
-                                .foregroundColor(Color.black)
+                                //.foregroundColor(Color.black)
                                
                         }
+                        .modifier(textFieldTextStyles())
             
             
                         
@@ -112,10 +114,11 @@ struct ModalAccountView: View {
                         VStack{
                             Text("Usuario")
                                 .font(.headline)
-                                .foregroundColor(Color.black)
+                               // .foregroundColor(Color.black)
                            
                                
                         }
+                        .modifier(textFieldTextStyles())
                             
             
                         
@@ -130,7 +133,7 @@ struct ModalAccountView: View {
                         
                         Spacer().frame(height: 40)
                         
-                        Button(action: {addAccountViewModel.validateData(name: nickname, account: accountNumber)}/*, label: {
+                        Button(action: {addAccountViewModel.validateData(name: nickname, account: accountNumber); self.alertSwift = true}/*, label: {
                             NavigationLink(destination: BarView().navigationBarBackButtonHidden(true))*/){
                              Text("Crear cuenta").font(.headline)
                                  .foregroundColor(.white).frame(width: UIScreen.main.bounds.width - 120).padding()

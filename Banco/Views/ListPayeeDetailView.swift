@@ -11,10 +11,11 @@ import SwiftUI
 struct ListPayeeDetailView: View {
     
     var payee: PayeeBodyResponse
-    
+    @Environment (\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
-            Color(Constants.mainGrayColor).ignoresSafeArea()
+            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
+            //Color(Constants.mainGrayColor).ignoresSafeArea()
             VStack{
                 /*account.avatar.resizable().frame(width: 200, height: 200).clipShape(Circle()).overlay(Circle().stroke(Color.black, lineWidth: 4)).shadow(color: Color.gray, radius: 5)*/
                 Image(systemName: "person.fill").resizable().frame(width: 200, height: 200).clipShape(Circle()).overlay(Circle().stroke(Color.black, lineWidth: 4)).shadow(color: Color.gray, radius: 5)

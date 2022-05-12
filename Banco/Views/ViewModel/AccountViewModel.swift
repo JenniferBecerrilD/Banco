@@ -5,7 +5,6 @@
 //  Created by Jennifer Becerril on 21/04/22.
 //
 
-/*import Foundation
 import Foundation
 import Combine
 import SwiftUI
@@ -20,7 +19,7 @@ class AccountViewModel :ObservableObject{
     }
     
    
-    @Published var accountBodyResponse : AccountBodyResponse = AccountBodyResponse(number: "", nickname: "", balance: ""){
+    @Published var accountBodyResponse : AccountBodyResponse = AccountBodyResponse(number: "", nickname: "", balance: 0){
         willSet{
             //Se ejecuta antes de que la priopiedad Cambie
         }
@@ -54,4 +53,4 @@ class AccountViewModel :ObservableObject{
     
    
     
-}*/
+}

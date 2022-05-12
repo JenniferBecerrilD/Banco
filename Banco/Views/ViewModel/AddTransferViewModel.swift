@@ -22,21 +22,21 @@ class AddTransferViewModel :ObservableObject{
         }
     }
     
-    func validateInfo(total: String, detail: String){
-        if(!(total.isEmpty || detail.isEmpty)){
-            postTransfer(total: total, detail: detail)
+    func validateInfo(destiny: String, total: String, detail: String){
+        if(!(destiny.isEmpty || total.isEmpty || detail.isEmpty )){
+            postTransfer(destiny: destiny, total: total, detail: detail)
         }else{
             //Mostrar mensaje al usuario
         }
     }
     
    
-    func postTransfer(total: String, detail: String){
+    func postTransfer(destiny: String, total: String, detail: String){
         
         let urlRequest = URL(string: Constants.urlBase+"/transfers")! // URL del servicio
         
         // Generamos el objeto con los datos a enviar al backend
-        let addTransferBodyRequest = TransferBodyRequest (amount: total, concept: detail, destinationAccount: "", deviceTokenCookie: "", sourceAccount: "", sdkData: "")
+        let addTransferBodyRequest = TransferBodyRequest (amount: total, concept: detail, destinationAccount: destiny, deviceTokenCookie: "", sourceAccount: "", sdkData: "")
         
         // Transformar el objeto swift a JSON
         let requestBody = try! JSONEncoder().encode(addTransferBodyRequest)

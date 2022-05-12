@@ -13,6 +13,7 @@ struct Transfers: Decodable, Identifiable{
 //struct Transfers{
     var id: Int
     var concept: String
+    //var sourceAccount: String
     var destinationAccount: String
     var amount: Int
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 let accounts = [
-    AccountBodyResponse(number: "12345", nickname: "Cuenta de ahorro", balance: "10")
+    AccountBodyResponse(number: "12345", nickname: "Cuenta de ahorro", balance: 10)
 ]
 
