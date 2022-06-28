@@ -29,7 +29,7 @@ struct Home : View {
     @ObservedObject var loginViewModel = LoginViewModel()
     var body : some View {
         ZStack {
-            Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
+            Color.mainGrayColor
             VStack{
                 
                 
@@ -114,7 +114,8 @@ struct Home : View {
                 
                 
             }
-            .background(Color("bg").ignoresSafeArea(.all, edges: .all))
-        }
+           
+        }.background(Color.mainGrayColor).ignoresSafeArea(.all)
+
     }
     }

@@ -11,7 +11,7 @@ import SwiftUI
 struct BancoApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView().onAppear {
+            BarView().onAppear {
                 let sdkCollection = RSAImplementation()
                 sdkCollection.collectData {
                     print($0)

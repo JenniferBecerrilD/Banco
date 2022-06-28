@@ -30,7 +30,7 @@ struct ModalAccountView: View {
         let res = Double(curHeight - minHeight) / (maxHeight - minHeight)
         return max(0, min(1, res))
     }
-    @Environment (\.colorScheme) var colorScheme
+    
     var body: some View {
         
         ZStack(alignment: .bottom){
@@ -60,8 +60,7 @@ struct ModalAccountView: View {
         
         
         ZStack{
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all)
-            //Color(Constants.mainGrayColor).ignoresSafeArea(.all)
+            Color.mainGrayColor
             ZStack {
               
                 
@@ -142,7 +141,7 @@ struct ModalAccountView: View {
                             .modifier(acceptButtonStyle())
                             .alert(isPresented: $alertSwift, content: {
                                 
-                                Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registrò correctamente"), dismissButton: .default(Text("Cerrar")))
+                                Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registró correctamente."), dismissButton: .default(Text("Cerrar")))
                                 
                             })
                             

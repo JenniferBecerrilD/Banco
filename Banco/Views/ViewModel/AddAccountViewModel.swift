@@ -58,13 +58,28 @@ class AddAccountViewModel :ObservableObject{
         let urlSession = URLSession(configuration: URLSessionConfiguration.default)
         let getAccountRequest = urlSession.dataTask(with: request, completionHandler: {data, response, error -> Void in
             
-           
-            self.addAccountBodyResponse = try! JSONDecoder().decode(GenericBodyResponse.self,from: data!)
+            if let error = error {
+                print(error)
+            }
+            if let data = data , let httpResponse = response as? HTTPURLResponse{
+                print("Response from account: \(httpResponse.statusCode)")
+                
+                switch(httpResponse.statusCode){
+                case 200, 201: self.addAccountBodyResponse = try!
+                    JSONDecoder().decode(GenericBodyResponse.self,from: data)
+                    
+                    print("Servicio consumido")
+                    print(self.addAccountBodyResponse.actionCode)
+                    self.accountResult(addAccountBodyResponse: self.addAccountBodyResponse)
+                    default: print (httpResponse.statusCode)
+                //default: self.statusCode = httpResponse.statusCode
+                }
+            }
+            
+            
             //self.updateReviews()
             
-            print("Servicio consumido")
-            print(self.addAccountBodyResponse.actionCode)
-            self.accountResult(addAccountBodyResponse: self.addAccountBodyResponse)
+            
         })
         getAccountRequest.resume()
         

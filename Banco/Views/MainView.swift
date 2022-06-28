@@ -29,7 +29,7 @@ struct MainView: View {
         NavigationView {
             
             ZStack {
-                
+                Color.mainGrayColor
                 GeometryReader{proxy in
                     let topEdge = proxy.safeAreaInsets.top
                     
@@ -86,17 +86,16 @@ struct HomeView: View {
     
     @State var selection: Int = 0
     @ObservedObject var transferViewModel = TransferViewModel()
-    @Environment (\.colorScheme) var colorScheme
+    
     var body: some View {
         
 
         Spacer()
         
-        
+        //NavigationView{
         ZStack {
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
-            //Color(.gray).opacity(0.06).ignoresSafeArea(.all)
-            //Color(.gray).opacity(0.06).ignoresSafeArea(.all)
+            Color.mainGrayColor.opacity(0.01)
+            
             VStack {
                 
                 
@@ -152,13 +151,13 @@ struct HomeView: View {
             
             
             
-        }
+        }//.background(Color.mainGrayColor).ignoresSafeArea()
         
         
         
         ZStack {
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
-            //Color(Constants.mainGrayColor).ignoresSafeArea()
+            Color.mainGrayColor
+            
             VStack (alignment: .leading){
                 
                 VStack (alignment: .leading){
@@ -181,7 +180,9 @@ struct HomeView: View {
             }
             .padding(.vertical)
         }
-        
+        //}.background(Color.mainGrayColor).ignoresSafeArea()
+        //Aqui termina navigationview
+        //BarView()
                 
         }
             

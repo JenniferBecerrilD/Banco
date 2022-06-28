@@ -19,16 +19,14 @@ struct ListPayeeView: View {
     @State private var showModal = false
     @State var selection: Int = 0
     //@State var selection: Int = 0
-    @Environment (\.colorScheme) var colorScheme
+    
     @ObservedObject var payeeViewModel = PayeeViewModel()
     var body: some View {
         
             
            
             ZStack(alignment: .bottomTrailing){
-                Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
-              
-               // Color(Constants.mainOrangeColor).opacity(0.06).ignoresSafeArea(.all)
+                Color.mainGrayColor
                 
              
                 //Cuentas sin ZStack
@@ -58,11 +56,12 @@ struct ListPayeeView: View {
                     //self.change.toggle()
                     showModal = true
                 }) {
-                    Image (systemName: self.change ? "plus": "xmark")
+                    Image(systemName: "plus")
+                    //Image (systemName: self.change ? "plus": "xmark")
                 }.padding()
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                    .background(Color(Constants.mainOrangeColor))
+                    .background(Color.mainOrangeColor)
                     .clipShape(Circle())
                     .shadow(radius: 4)
             .padding()
@@ -73,7 +72,7 @@ struct ListPayeeView: View {
       
         
         
-        Spacer()
+        //Spacer()
         
         }
 }

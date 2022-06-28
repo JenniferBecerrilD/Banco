@@ -12,7 +12,7 @@ struct BarView: View {
    @State var selection: Int = 0
     
     init(){
-        UITabBar.appearance().backgroundColor = UIColor(Color(Constants.mainOrangeColor))
+        UITabBar.appearance().backgroundColor = UIColor(Color.mainOrangeColor)
         UITabBar.appearance().unselectedItemTintColor = UIColor.white.withAlphaComponent(0.6)
     }
 

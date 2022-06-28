@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct CoverView: View {
-    @Environment (\.colorScheme) var colorScheme
+    
     var body: some View {
         
         ZStack{
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
-            //Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
+            Color.mainGrayColor.ignoresSafeArea(.all)
             Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

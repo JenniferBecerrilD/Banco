@@ -37,14 +37,11 @@ struct Transfer : View {
     //@State private var selectedNum = "1"
     
     @State var selection: Int = 0
-    @Environment (\.colorScheme) var colorScheme
+    
     var body : some View{
         
         ZStack {
-            Color(colorScheme == .light ? .white : .black).ignoresSafeArea(.all).opacity(0.06)
-            //Color(Constants.mainGrayColor).opacity(0.06).ignoresSafeArea(.all)
-            
-            
+            Color.mainGrayColor.ignoresSafeArea(.all)
             
             
             VStack{
@@ -141,7 +138,7 @@ struct Transfer : View {
                                                                                                                    .modifier(acceptButtonStyle())
                                                                                                                    .alert(isPresented: $alertSwift, content: {
                                                                                                                        
-                                                                                                                       Alert(title: Text("Registro completo!"), message: Text("Tu cuenta se registró correctamente"), dismissButton: .default(Text("Cerrar")))
+                                                                                                                       Alert(title: Text("Transferencia completa!"), message: Text("Tu transferencia se realizó correctamente."), dismissButton: .default(Text("Cerrar")))
                                                                                                                        
                                                                                                                    })
                             }
@@ -160,7 +157,7 @@ struct Transfer : View {
             
         }
         
-        .navigationBarTitle("Transferir").navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+        .navigationBarTitle("Transferir").navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline).background(Color.mainGrayColor)
         
         
         

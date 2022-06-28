@@ -58,13 +58,29 @@ class LoginViewModel :ObservableObject{
         let urlSession = URLSession(configuration: URLSessionConfiguration.default)
         let getLoginRequest = urlSession.dataTask(with: request, completionHandler: {data, response, error -> Void in
             
+            if let error = error {
+                print(error)
+            }
+            if let data = data , let httpResponse = response as? HTTPURLResponse{
+                print("Response from login: \(httpResponse.statusCode)")
+                
+                switch(httpResponse.statusCode){
+                case 200, 201: self.loginBodyResponse = try!
+                    JSONDecoder().decode(GenericBodyResponse.self,from: data)
+                    
+                    print("Servicio consumido")
+                    print(self.loginBodyResponse.actionCode)
+                    self.loginResult(loginBodyResponse: self.loginBodyResponse)
+                    default: print (httpResponse.statusCode)
+                //default: self.statusCode = httpResponse.statusCode
+                }
+            }
+            
            
-            self.loginBodyResponse = try! JSONDecoder().decode(GenericBodyResponse.self,from: data!)
+            //self.loginBodyResponse = try! JSONDecoder().decode(GenericBodyResponse.self,from: data!)
             //self.updateReviews()
             
-            print("Servicio consumido")
-            print(self.loginBodyResponse.actionCode)
-            self.loginResult(loginBodyResponse: self.loginBodyResponse)
+           
         })
         getLoginRequest.resume()
         

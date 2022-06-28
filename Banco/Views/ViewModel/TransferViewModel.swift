@@ -1,3 +1,4 @@
+
 import Foundation
 import Combine
 import SwiftUI
@@ -35,8 +36,22 @@ class TransferViewModel :ObservableObject{
         // Ejecutamos la llamada
         let urlSession = URLSession(configuration: URLSessionConfiguration.default)
         let getTransfersRequest = urlSession.dataTask(with: request, completionHandler: {data, response, error -> Void in
+            if let error = error {
+                print(error)
+            }
+            if let data = data , let httpResponse = response as? HTTPURLResponse{
+                print("Response from transfers: \(httpResponse.statusCode)")
+                
+                switch(httpResponse.statusCode){
+                case 200, 201: self.trans = try!
+                    JSONDecoder().decode(TransferDataResponse.self,from: data)
+                    
+                default: print (httpResponse.statusCode)
+                //default: self.statusCode = httpResponse.statusCode
+                }
+            }
             //Validación del codigo de respuesta
-            self.trans = try! JSONDecoder().decode(TransferDataResponse.self,from: data!)
+            //self.trans = try! JSONDecoder().decode(TransferDataResponse.self,from: data!)
             //self.updateReviews()
             
         })

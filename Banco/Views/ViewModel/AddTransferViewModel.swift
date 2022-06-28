@@ -57,13 +57,27 @@ class AddTransferViewModel :ObservableObject{
         let urlSession = URLSession(configuration: URLSessionConfiguration.default)
         let getTransferRequest = urlSession.dataTask(with: request, completionHandler: {data, response, error -> Void in
             
-           
-            self.addTransferBodyResponse = try! JSONDecoder().decode(GenericBodyResponse.self,from: data!)
+            if let error = error {
+                print(error)
+            }
+            if let data = data , let httpResponse = response as? HTTPURLResponse{
+                print("Response from payees: \(httpResponse.statusCode)")
+                
+                switch(httpResponse.statusCode){
+                case 200, 201: self.addTransferBodyResponse = try!
+                    JSONDecoder().decode(GenericBodyResponse.self,from: data)
+                    
+                    print("Servicio consumido")
+                    print(self.addTransferBodyResponse.actionCode)
+                    self.transferResult(addTransferBodyResponse: self.addTransferBodyResponse)
+                    default: print (httpResponse.statusCode)
+                //default: self.statusCode = httpResponse.statusCode
+                }
+            }
+            //self.addTransferBodyResponse = try! JSONDecoder().decode(GenericBodyResponse.self,from: data!)
             //self.updateReviews()
             
-            print("Servicio consumido")
-            print(self.addTransferBodyResponse.actionCode)
-            self.transferResult(addTransferBodyResponse: self.addTransferBodyResponse)
+            
         })
         getTransferRequest.resume()
         

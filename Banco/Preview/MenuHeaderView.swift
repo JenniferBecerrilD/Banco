@@ -12,9 +12,8 @@ struct MenuHeaderView: View {
     let account : AccountBodyResponse = accounts [0]
     @ObservedObject var accountViewModel = AccountViewModel()
     var body: some View {
-        //Spacer()
+        //Spacer().frame(minHeight: 5)
         ZStack (alignment: .topTrailing){
-            
             
             //Boton cerrar menu
             Button(action: { withAnimation(.spring()){ isShowing.toggle() } }, label: { Image(systemName: "xmark").frame(width: 32, height: 32).foregroundColor(.white).padding()
@@ -50,11 +49,12 @@ struct MenuHeaderView: View {
                    Spacer()
                 }
                 
-                Spacer()
             }
             .foregroundColor(.white)
-        .padding()
-        }
+            .padding()
+        }.padding(.top, 80)
+            //.padding(20)
+        Spacer()
     }
 }
 

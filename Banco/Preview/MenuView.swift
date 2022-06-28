@@ -11,7 +11,7 @@ struct MenuView: View {
     @Binding var isShowing: Bool
     var body: some View {
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [Color(Constants.mainOrangeColor)]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color.mainOrangeColor]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack{

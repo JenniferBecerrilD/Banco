@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct Constants{
     
@@ -14,7 +15,15 @@ struct Constants{
     
     static var token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsY3J1ekBwZW5zYXJlLm14IiwiZXhwIjoxNjQ5ODcwMDMxfQ.25r6qZa9cTMmhU_nigWweh2A0gzZTFQBuChOCGRUUtY"
     
+    /*static var mainOrangeColor: UIColor {
+        UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 193/255, green: 121/255, blue: 0/255, alpha: 1.0) : UIColor(red: 249/255, green: 168/255, blue: 37/255, alpha: 1.0) }
+        }*/
     
-    static let mainOrangeColor = UIColor(red: 255/255, green: 148/255, blue: 0/255, alpha: 2.0)
-    static let mainGrayColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 2.0)
+    
+}
+
+extension Color{
+    static let background = Color(UIColor.systemBackground)
+    static let mainGrayColor = Color("backgroundColor")
+    static let mainOrangeColor = Color("orangeColor")
 }

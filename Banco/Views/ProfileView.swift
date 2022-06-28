@@ -21,7 +21,7 @@ struct ProfileView: View {
                     
                     topBar(topEdge: topEdge)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .background(Color(Constants.mainOrangeColor))
+                    .background(Color.mainOrangeColor)
                 }
                 .frame(height: maxHeight)
                 
@@ -58,15 +58,7 @@ struct topBar: View{
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color.black)
                 
-            /*Text(account.nickname).font(.title).fontWeight(.bold)
-                .foregroundColor(Color.black)
-            
-            Text(" \(account.balance)").font(.title2)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color.black)
-            Text(" \(account.number)").font(.title2)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color.black)*/
+        
             
         }
         .padding()
